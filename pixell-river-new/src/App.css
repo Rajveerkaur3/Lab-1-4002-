@@ -127,3 +127,41 @@ footer {
     margin-bottom: 0;
 }
 
+.organization-group {
+  border: 2px solid lightgreen;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1.5em 0;
+  background: #f9fff9;
+}
+
+.organization-group.vacant-group {
+  border: 2px dashed #90ee90;
+  background: #fcfffc;
+}
+
+.organization-item {
+  border: 2px solid lightgreen;
+  border-radius: 8px;
+  padding: 0.8em;
+  margin: 1em 0;
+  width: 60%;
+}
+
+
+.role-description {
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: normal;     
+  line-height: 1.4;       
+}
+
+input[type="text"] {
+  width: 250px;
+  height: 40px;
+  font-size: 1rem;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+
