@@ -94,7 +94,7 @@ main {
 .employee-list {
   border: 2px solid lightgreen;
   border-radius: 8px;
-  width: 400%;        /* stretches to parent width */
+  width: 260%;        
   box-sizing: border-box;
 }
 

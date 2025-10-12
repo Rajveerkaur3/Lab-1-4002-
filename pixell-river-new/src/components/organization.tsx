@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { organization } from "../data/organization";
 import { roleDescriptions } from "../data/roleDescriptions";
+import { useEntryForm } from "../hooks/useEntryForm";
 
 const Organization: React.FC = () => {
   const [openRole, setOpenRole] = useState<string | null>(null);
+  const { values, error, handleChange, handleSubmit } = useEntryForm("role");
 
   const toggleRole = (role: string) => {
     setOpenRole(openRole === role ? null : role);
@@ -28,6 +30,18 @@ const Organization: React.FC = () => {
             </div>
           ))}
         </div>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="New Role Name"
+            value={values.name}
+            onChange={handleChange}
+          />
+          <button type="submit">Add Role</button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </form>
       </section>
     </main>
   );

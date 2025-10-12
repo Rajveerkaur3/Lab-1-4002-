@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { employees } from "../data/employees";
+import { useEntryForm } from "../hooks/useEntryForm";
 
 const Body: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-const [newEmployeeName, setNewEmployeeName] = useState("");
-  const [newEmployeeDepartment, setNewEmployeeDepartment] = useState("");
-  const [error, setError] = useState("");
-  
+  const { values, error, handleChange, handleSubmit } = useEntryForm("employee");
+
   const filteredEmployees = Object.entries(employees).reduce(
     (acc, [department, staff]) => {
       const filteredStaff = staff.filter(
@@ -49,45 +48,29 @@ const [newEmployeeName, setNewEmployeeName] = useState("");
           ))}
         </div>
 
-
-        <form
-  onSubmit={(e) => {
-    e.preventDefault();
-    if (newEmployeeName.length < 3) {
-      setError("Name must be at least 3 characters");
-      return;
-    }
-    if (!employees[newEmployeeDepartment]) {
-      setError("Invalid department");
-      return;
-    }
-    employees[newEmployeeDepartment].push(newEmployeeName);
-    setNewEmployeeName("");
-    setNewEmployeeDepartment("");
-    setError("");
-  }}
-  
->
-  <input
-    type="text"
-    placeholder="New Employee Name"
-    value={newEmployeeName}
-    onChange={(e) => setNewEmployeeName(e.target.value)}
-  />
-  <select
-    value={newEmployeeDepartment}
-    onChange={(e) => setNewEmployeeDepartment(e.target.value)}
-  >
-    <option value="">Select Department</option>
-    {Object.keys(employees).map((dept) => (
-      <option key={dept} value={dept}>
-        {dept}
-      </option>
-    ))}
-  </select>
-  <button type="submit">Add Employee</button>
-  {error && <p style={{ color: "red" }}>{error}</p>}
-</form>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="New Employee Name"
+            value={values.name}
+            onChange={handleChange}
+          />
+          <select
+            name="department"
+            value={values.department}
+            onChange={handleChange}
+          >
+            <option value="">Select Department</option>
+            {Object.keys(employees).map((dept) => (
+              <option key={dept} value={dept}>
+                {dept}
+              </option>
+            ))}
+          </select>
+          <button type="submit">Add Employee</button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </form>
       </section>
     </main>
   );
