@@ -1,0 +1,17 @@
+{
+  "relatedProjects": ["prj_yosxCy0ocEpk0TXjhd1MeFbHIbC2"],
+
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": true
+    }
+  }
+}
