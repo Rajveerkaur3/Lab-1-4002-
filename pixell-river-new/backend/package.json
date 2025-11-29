@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "start": "ts-node src/server.ts",
-    "vercel-build": "prisma migrate deploy && prisma db seed && tsc",
-    "postinstall": "prisma generate"
-  },
+  "dev": "nodemon src/server.ts",
+  "start": "ts-node src/server.ts",
+  "build": "tsc",
+  "vercel-build": "prisma generate && prisma migrate deploy && prisma db seed && npm run build",
+  "postinstall": "prisma generate"
+},
   "dependencies": {
     "@clerk/clerk-sdk-node": "^4.13.23",
     "@neondatabase/serverless": "^1.0.2",
