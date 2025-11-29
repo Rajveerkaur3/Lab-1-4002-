@@ -7,6 +7,7 @@
     "start": "ts-node src/server.ts"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.23",
     "@prisma/client": "^6.19.0",
     "cors": "^2.8.5",
     "express": "^5.1.0"

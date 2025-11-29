@@ -1,11 +1,13 @@
 import { Router } from "express";
 import { employeeController } from "../controllers/employeeController";
+import { requireAuth } from "../middleware/clerkmiddleware";
 
 const router = Router();
 
-router.get("/", employeeController.getAll);
-router.get("/:department", employeeController.getByDepartment);
-router.post("/", employeeController.add);
-router.delete("/", employeeController.remove);
+// Protect all employee routes
+router.get("/", requireAuth, employeeController.getAll);
+router.get("/:department", requireAuth, employeeController.getByDepartment);
+router.post("/", requireAuth, employeeController.add);
+router.delete("/", requireAuth, employeeController.remove);
 
 export default router;

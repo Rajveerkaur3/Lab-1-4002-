@@ -5,7 +5,7 @@ import organizationRoutes from "./routes/organizationRoutes";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:3000", "http://localhost:5173"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:5173", "http://localhost:5174"];
 app.use(
   cors({
     origin: function (origin, callback) {

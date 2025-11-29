@@ -1,15 +1,15 @@
-
+/* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0.5em;
     line-height: 1.6;
     background-color: white;
-    color: #000;
+    color: #000; /* all text black by default */
     text-align: left;
 }
 
-
+/* Navigation */
 nav {
     text-align: left;
     padding: 10px;
@@ -28,27 +28,27 @@ nav {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
-    color: purple;
+    color: purple
 }
 
 .page-links a:hover {
-    color: #000;
+    color: #000; /* hover stays black */
 }
 
-
+/* Logo */
 .logo-wrap {
-    margin: 10px 0;
+    margin: 10px 0;   /* spacing below h1 */
 }
 
 .logo-wrap img {
-    height: 210px;
-    display: block;
-    border: none;
-    background: none;
+    height: 210px;     /* adjust size if needed */
+    display: block;    /* left-align the logo */
+    border: none;      /* remove any box or border */
+    background: none;  /* remove background */
 }
 
 
-
+/* Header */
 header {
     text-align: left;
     padding: 5px 10px;
@@ -65,15 +65,15 @@ header h1 {
 }
 
 
-
+/* Subheading: Pixell River Financial */
 header span {
     font-size: 1.1em;
-    color: #000;
+    color: #000; /* black */
     display: block;
     margin-top: 5px;
 }
 
-
+/* Main Section */
 main {
     max-width: 900px;
     margin: 0;
@@ -81,28 +81,23 @@ main {
     text-align: left;
 }
 
-
-.department-box {
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
-  padding: 1em;
-  margin-bottom: 2em;
-  width: 80%;
+/* Employee Directory */
+.department {
+    margin-bottom: 15px;
 }
-
 
 .employee-list {
-  border: 2px solid lightgreen;
-  border-radius: 8px;
-  width: 260%;        
-  box-sizing: border-box;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    border: 2px solid lightgreen;
+    border-radius: 8px;
 }
-
 
 
 
 .department h3 {
-    color: #000;
+    color: #000; /* department headings black */
     margin-bottom: 5px;
     font-size: 1.3rem;
     padding-left: 0;
@@ -113,55 +108,17 @@ main {
     border: none;
 }
 
-
+/* Footer */
 footer {
     text-align: left;
     padding: 10px 0;
     font-size: 0.9em;
-    color: #000;
+    color: #000; /* black */
     border-top: none;
     margin-top: 20px;
 }
 
 .page-links {
-    margin-bottom: 0;
-}
-
-.organization-group {
-  border: 2px solid lightgreen;
-  border-radius: 10px;
-  padding: 1em;
-  margin: 1.5em 0;
-  background: #f9fff9;
-}
-
-.organization-group.vacant-group {
-  border: 2px dashed #90ee90;
-  background: #fcfffc;
-}
-
-.organization-item {
-  border: 2px solid lightgreen;
-  border-radius: 8px;
-  padding: 0.8em;
-  margin: 1em 0;
-  width: 60%;
-}
-
-
-.role-description {
-  margin-top: 0.5em;
-  font-size: 0.9rem;
-  color: #333;
-  white-space: normal;     
-  line-height: 1.4;       
-}
-
-input[type="text"] {
-  width: 250px;
-  height: 40px;
-  font-size: 1rem;
-  padding: 0.5em;
-  border-radius: 6px;
-}
+        margin-bottom: 0;
+    }
 

@@ -1,11 +1,13 @@
 import { Router } from "express";
 import { roleController } from "../controllers/organizationController";
+import { requireAuth } from "../middleware/clerkmiddleware"; 
 
 const router = Router();
 
-router.get("/", roleController.getAll);
-router.get("/:role", roleController.getRole);
-router.post("/", roleController.add);
-router.delete("/", roleController.remove);
+// Protect all organization routes
+router.get("/", requireAuth, roleController.getAll);
+router.get("/:role", requireAuth, roleController.getRole);
+router.post("/", requireAuth, roleController.add);
+router.delete("/", requireAuth, roleController.remove);
 
 export default router;
